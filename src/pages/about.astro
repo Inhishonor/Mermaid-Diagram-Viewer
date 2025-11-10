@@ -1,0 +1,27 @@
+---
+import Navbar from '../components/navbar.astro';
+
+import '../style/main.css';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Examples</title>
+	</head>
+	<body>
+		<Navbar />
+		<div class="page">
+            <h1>About This Project</h1>
+            <div class="section">
+                <h3>Purpose</h3>
+                <p>This is a simple website to view Mermaid diagrams. <a href="https://mermaid.js.org/" target="_blank">Mermaid JS</a> is a powerful diagramming and charting tool that uses Markdown-like syntax to generate diagrams. You can use this website to store, organize, customize and view these beautiful diagrams.</p>
+                <h3>Tech Stack</h3>
+                <p>This project is built with <a href="https://astro.build/" target="_blank">Astro</a> and exists to serve <a href="https://mermaid.js.org/" target="_blank">Mermaid JS</a> files. Other than that, everything else is pure HTML, CSS and TypeScript.</p>
+            </div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+---
+import '../style/navbar.css';
+import { SHOW_EXAMPLES, SHOW_EDITOR } from '../constants.ts';
+---
+<div class="navbar">
+    <div class="nav-content">
+        <h3><a href="/">Home</a></h3>
+    </div>
+    { SHOW_EXAMPLES && (
+    <div class="nav-content">
+        <h3><a href="/example">Example</a></h3>
+    </div>
+    )}
+    { SHOW_EDITOR && (
+        <div class = "nav-content">
+            <h3><a href="https://mermaid.live/edit" target="_blank">Live Editor</a></h3>
+        </div>
+    )}
+    <div class = "nav-content">
+        <h3><a href="/about">About</a></h3>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+:root {
+    --background-color: #e1f5ff;
+    --border-color: #4b464ac0;
+    --text-color:#0c1a35d0;
+    --navbar-background-color: #333232f1;
+}
+
+* {
+    color: var(--text-color);
+}
+
+h1 {
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    padding: 15px;
+    background-color: var(--background-color);
+    margin: 3px;
+    color: black;
+}
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+}
+
+a:hover { 
+    color: #bebebe; 
+}
+
+pre code {
+    display: block;
+    padding: 1.33em;
+    border-radius: 0.5em;
+    font-family: monospace;
+    background-color: var(--navbar-background-color);
+}
+
+.section, .diagram-section {
+    min-height: 8em;
+    border: 3px solid var(--border-color);
+    border-radius: 0.5em;
+    font-size: 1.2em;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    margin: 0.75rem;
+}
+
+.diagram-section {
+    display: flex;
+}
+
+.diagram {
+    border: 2px solid var(--border-color);
+    border-radius: 0.5em;
+    padding: 20px;
+    margin: 20px;
+}

@@ -1,0 +1,26 @@
+---
+import Navbar from '../components/navbar.astro';
+import FileStructureDiagram from '../diagrams/example/fileStructure.astro';
+
+import '../style/main.css';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Examples</title>
+	</head>
+	<body>
+		<Navbar />
+		<div class="page">
+			<h1>Example</h1>
+			<div class="diagram-section">
+				<FileStructureDiagram />
+			</div>
+		</div>
+		<script type="module" src='./scripts/initMermaid.ts'></script>
+	</body>
+</html>

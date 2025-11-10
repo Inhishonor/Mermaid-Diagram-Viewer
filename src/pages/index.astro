@@ -1,0 +1,68 @@
+---
+import Navbar from '../components/navbar.astro';
+import { SHOW_DOCUMENTATION } from '../constants';
+import { getCollection, render } from 'astro:content';
+
+const docs = await getCollection('docs');
+const renderedDocs = await Promise.all(docs.map(async (doc: any) => {
+	const { Content } = await render(doc);
+	const id = doc.data.title.trim().toLowerCase().replace(/ /g, '-');
+	return { ...doc, Content, id };
+}));
+import '../style/main.css';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Mermaid Builder</title>
+	</head>
+	<body>
+	<Navbar />
+	<div class="page">
+		<h1>Mermaid Diagram Viewer</h1>
+		<div class="diagram-section">
+			<div class="diagram">
+					A mermaid diagram:
+					<pre class="mermaid">
+						graph TD
+						A[Client] --> B[Load Balancer]
+						B --> C[Server01]
+						B --> D[Server02]
+					</pre>
+			</div>
+			<div class="diagram">
+					Another mermaid diagram:
+					<pre class="mermaid">
+						pie title Pets adopted by volunteers
+						"Dogs" : 386
+						"Cats" : 85
+						"Rats" : 15
+					</pre>
+			</div>
+		</div>
+		{ SHOW_DOCUMENTATION && (
+			<div>
+				<h1>Documentation</h1>
+				<div class="section">
+					<h3><a href="https://mermaid.js.org/intro/" target="_blank">Mermaid Documentation</a></h3>
+					<ul>
+						<li><a href="https://mermaid.js.org/ecosystem/tutorials.html" target="_blank">Tutorials</a></li>
+						<li><a href="https://mermaid.js.org/intro/syntax-reference.html" target="_blank">Syntax and Configuration</a></li>
+					</ul>
+				</div>
+				{renderedDocs.map(doc => (
+					<div class="section">
+						<h2 id={doc.id} >{doc.data.title}</h2>
+						<doc.Content />
+					</div>
+				))}
+			</div>
+		)}
+	</div>
+	<script type="module" src='./scripts/initMermaid.ts'></script>
+	</body>
+</html>
