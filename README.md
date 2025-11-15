@@ -87,3 +87,10 @@ Now you can proceed with [adding diagrams](./docs/addNewDiagram.md).
 
 ## Tech Stack
 This project is built with [Astro](https://astro.build/) and exists to serve [Mermaid JS](https://mermaid.js.org/) files. Other than that, everything else is pure HTML, CSS and TypeScript.
+
+## Screenshots
+![Main Page of the mermaid diagram viewer. Shows two example mermaid diagrams, against a light blue background](./docs/screenshots/Mermaid-Diagram-Viewer-Main.png)
+
+![The section of the viewer that contains the usage instructions and documentation](./docs/screenshots/Mermaid-Diagram-Viewer-Docs.png)
+
+![An example diagram, against the site's light blue color scheme, that is a flowchart depicting the structure of the web application](./docs/screenshots/Mermaid-Diagram-Viewer-Example.png)
