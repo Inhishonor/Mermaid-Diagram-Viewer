@@ -4,7 +4,7 @@ title: Add New Section
 To add a new diagram page, (A place to collect all diagrams related to one subject), use this procedure.
 > Note: This should be handled by a script in the future
 >
-1. Add a new floder to the `diagrams` folder.
+1. Add a new folder to the `diagrams` folder.
 2. Add a new page in pages with the name of your collection/page followed by .astro. Populate it with the following content:
 ``` astro
 ---
@@ -26,7 +26,7 @@ import '../style/main.css';
 		<div class="page">
 			<h1>Example</h1>
 			<div class="diagram-section">
-			
+
 			</div>
 		</div>
 		<script type="module" src='./scripts/initMermaid.ts'></script>
